@@ -1,0 +1,169 @@
+package nac;
+import java.util.Scanner;
+public class Nac02 {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner (System.in);
+
+		double valorFinal,valorTotal,valorDesconto,desconto,preco;
+		int nDependentes,idade,tempoEmpresa;
+		String departamento,plano,opcao,nome,msg;
+		
+		valorFinal=0;
+		valorTotal=0;
+		valorDesconto=0;
+		desconto=0;
+		preco=0;
+		nDependentes=0;
+		idade=0;
+		tempoEmpresa=0;
+		departamento=null;
+		plano=null;
+		opcao=null;
+		nome=null;
+		msg=null;
+		
+		System.out.println("Nome do funcionário: ");
+		nome=entrada.next();
+		
+		System.out.println("");
+		System.out.print("Idade do funcionário");
+		idade=entrada.nextInt();
+		
+		System.out.println("");
+		System.out.println("Planos de Saúde");
+		System.out.println("FESP - Perfil SP");
+		System.out.println("PPQS - Preferencial Plus");
+		System.out.println("TQSP - Nacional");
+		System.out.print("Digite o plano desejado: ");
+		plano=entrada.next();
+		
+		System.out.println("");
+		System.out.println("Opções de Plano de Saúde");
+		System.out.println("EF - Enfermaria");
+		System.out.println("AP - Apartamento");
+		System.out.print("Digite a opção do plano: ");
+		opcao=entrada.next();
+		
+		System.out.println("");
+		System.out.print("Digite o número de dependentes do funcionário: ");
+		nDependentes=entrada.nextInt();
+		
+		System.out.println("");
+		System.out.println("Departamentos");
+		System.out.println("ADM - Administração");
+		System.out.println("COM - Comercial");
+		System.out.println("TI - Tecnologia");
+		System.out.println("FIN- Financeiro");
+		System.out.print("Digite o departamento do funcionário: ");
+		departamento=entrada.next();
+		
+		System.out.println("");
+		System.out.print("Digite o tempo de empresa do funcionário: ");
+		tempoEmpresa=entrada.nextInt();
+		
+		//Valor do Plano
+		if (plano.equalsIgnoreCase("FESP")){
+			if (opcao.equalsIgnoreCase("EF")){
+				if (idade<49){
+					preco=121.50;
+				}else{
+					preco=143.40;
+				}
+			}else{
+				if(idade<49){
+					preco=169.80;
+				}else{
+					preco=187.80;
+				}
+			}
+		}else{
+			if(plano.equalsIgnoreCase("PPQS")){
+				if(opcao.equalsIgnoreCase("EF")){
+					if(idade<49){
+						preco=157.80;
+					}else{
+						preco=175.40;
+					}
+				}else{
+					if(idade<49){
+						preco=182.60;
+					}else{
+						preco=197.30;
+					}
+				}
+			}else{
+				if(opcao.equalsIgnoreCase("AP")){
+					if(idade<49){
+						preco=321.60;
+					}else{
+						preco=425.80;
+					}
+				}else{
+					if(idade<49){
+						preco=245.90;
+					}else{
+						preco=297.90;
+					}
+				}
+			}
+		}
+		
+		//Valor Total
+		valorTotal=preco+(preco*nDependentes);
+		
+		//Desconto
+		if (plano.equalsIgnoreCase("PPQS")){
+			if((departamento.equalsIgnoreCase("FIN")) || (departamento.equalsIgnoreCase("COM"))){
+				desconto=0.05;
+			}else{
+				desconto=0.08;
+			}
+		}else if (plano.equalsIgnoreCase("TQSP")){
+			if((departamento.equalsIgnoreCase("COM")) || (departamento.equalsIgnoreCase("ADM"))){
+				desconto=0.1;
+			}else if (opcao.equalsIgnoreCase("EF")){
+				desconto=0.12;
+			}else{
+				desconto=0.15;
+			}
+		}
+		
+		//Valor Desconto
+		valorDesconto=valorTotal*desconto;
+		
+		//Valor Final
+		valorFinal=valorTotal-valorDesconto;
+		
+		//Regra RH
+		if ((tempoEmpresa>=11) && (tempoEmpresa<=15)){
+			if (idade>40){
+				msg="Deve verificar no RH a data do curso de reciclagem";
+			}
+		}
+		
+		//Saídas
+		System.out.println("--------------------------------------------");
+		System.out.println("DADOS DO FUNCIONÁRIO");
+		System.out.println("Nome do Funcionário: "+nome);
+		System.out.println("Idade do Funcionário: "+idade);
+		System.out.println("Departamento: "+departamento);
+		System.out.println("Tempo de Empresa: "+tempoEmpresa);
+		System.out.println("");
+		System.out.println("DADOS DO PLANO");
+		System.out.println("Plano de Saúde: "+plano);
+		System.out.println("Valor do Plano: "+preco);
+		System.out.println("Número de Dependentes: "+nDependentes);
+		System.out.println("Valor Total da Assistência Médica: "+valorTotal);
+		System.out.println("Percentual de desconto "+desconto+"- Valor do Desconto: "+valorDesconto);
+		System.out.println("Valor Final: "+valorFinal);
+		System.out.println("Aviso: ");
+		System.out.println(msg);
+		
+		
+		
+		entrada.close();
+	}
+
+}
