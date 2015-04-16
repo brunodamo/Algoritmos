@@ -35,25 +35,25 @@ public static void main(String[] args) {
 		soma=soma+id;
 		
 	
-		
-		do{
-			System.out.println("Insira a opinião");
-			op=entrada.next();
-			if (op.equalsIgnoreCase("A")){
-				optA++;
-			}else if (op.equalsIgnoreCase("B")){
-				optB++;
-			}else if (op.equalsIgnoreCase("C")){
-				optC++;
-			}else if (op.equalsIgnoreCase("D")){
-				optD++;
-			}else if (op.equalsIgnoreCase("E")){
-				optD++;
-			}else{
-				System.out.println("Escolha uma opinião válida");
-			}
-		} while((! op.equalsIgnoreCase("A")) && (! op.equalsIgnoreCase("B")) && (! op.equalsIgnoreCase("C")) && (! op.equalsIgnoreCase("D")) && (! op.equalsIgnoreCase("E")));
-		 
+		if(id!=0){
+			do{
+				System.out.println("Insira a opinião");
+				op=entrada.next();
+				if (op.equalsIgnoreCase("A")){
+					optA++;
+				}else if (op.equalsIgnoreCase("B")){
+					optB++;
+				}else if (op.equalsIgnoreCase("C")){
+					optC++;
+				}else if (op.equalsIgnoreCase("D")){
+					optD++;
+				}else if (op.equalsIgnoreCase("E")){
+					optD++;
+				}else{
+					System.out.println("Escolha uma opinião válida");
+				}
+			} while((! op.equalsIgnoreCase("A")) && (! op.equalsIgnoreCase("B")) && (! op.equalsIgnoreCase("C")) && (! op.equalsIgnoreCase("D")) && (! op.equalsIgnoreCase("E")));
+		}
 	}
 	
 	if (i!=0){
