@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Ex05 {
 	
-public static void main(String[] args) {
+	public static void main(String[] args) {
 
 	Scanner entrada = new Scanner(System.in);
 	
@@ -48,7 +48,7 @@ public static void main(String[] args) {
 				}else if (op.equalsIgnoreCase("D")){
 					optD++;
 				}else if (op.equalsIgnoreCase("E")){
-					optD++;
+					optE++;
 				}else{
 					System.out.println("Escolha uma opinião válida");
 				}
@@ -64,14 +64,14 @@ public static void main(String[] args) {
 		pctD=(double)optD/i;
 		pctE=(double)optE/i;
 	}
-		System.out.println("Quantidade de pessoas que responderam a pesquisa: "+i);
-		System.out.println("Média de idade das pessoas que responderam a pesquisa: "+media);
-		System.out.println("Porcentagem de opinião A: "+pctA);
-		System.out.println("Porcentagem de opinião B: "+pctB);
-		System.out.println("Porcentagem de opinião C: "+pctC);
-		System.out.println("Porcentagem de opinião D: "+pctD);
-		System.out.println("Porcentagem de opinião E: "+pctE);
+	System.out.println("Quantidade de pessoas que responderam a pesquisa: "+i);
+	System.out.println("Média de idade das pessoas que responderam a pesquisa: "+media);
+	System.out.println("Porcentagem de opinião A: "+pctA);
+	System.out.println("Porcentagem de opinião B: "+pctB);
+	System.out.println("Porcentagem de opinião C: "+pctC);
+	System.out.println("Porcentagem de opinião D: "+pctD);
+	System.out.println("Porcentagem de opinião E: "+pctE);
 		
-		entrada.close();
-}
+	entrada.close();
+	}
 }
