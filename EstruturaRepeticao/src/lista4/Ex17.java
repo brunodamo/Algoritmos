@@ -1,9 +1,11 @@
 package lista4;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Ex17 {
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
+		
 
 		int iLoc=0,iDVD=0,codCliente=0,codDVD=0,codMaior=0,codMenor=0;
 		double valor=0,valorLoc=0,desconto=0,valorFinal=0,valorGeral=0,menorLoc=0,maiorLoc=0;
