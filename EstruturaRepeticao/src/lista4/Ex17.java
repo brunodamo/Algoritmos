@@ -1,6 +1,5 @@
 package lista4;
 import java.util.Scanner;
-import java.text.DecimalFormat;
 
 public class Ex17 {
 	public static void main(String[] args) {
