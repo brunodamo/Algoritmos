@@ -1,0 +1,31 @@
+package lista3;
+import java.util.Scanner;
+
+public class Ex11 {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner (System.in);
+		
+		int i,parcela,pct;
+		double valorCarro,valorDesc,total;
+		
+		i=0;
+		valorDesc=0;
+		valorCarro=0;
+		parcela=0;		
+			
+		System.out.println("Insira o valor do carro: ");
+		valorCarro=entrada.nextDouble();
+		
+		valorDesc=valorCarro*0.8;
+		
+		System.out.println("O valor à vista é: "+valorDesc);	
+		for (i=6;i<=60;i+=6){
+			parcela+=3;
+			total=valorCarro*(1+parcela/100);
+			System.out.println("O preco final parcelado em "+i+"X vezes é de "+total+ "com parcelas de R$: "+total/i);
+			
+		}
+		entrada.close();
+	}
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.127+Q:\Algoritmos\dev\workspace\.metadata\.plugins\org.eclipse.jdt.core
+2524174724.index
+3985101993.index
+1235518310.index
+2802814947.index

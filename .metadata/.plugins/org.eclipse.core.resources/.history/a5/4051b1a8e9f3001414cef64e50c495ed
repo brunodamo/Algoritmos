@@ -1,0 +1,26 @@
+package lista1;
+import java.util.Scanner;
+public class Ex02 {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		
+		Double[] valor = new Double[6];
+		char[] tipoOperacao = new char[6];
+		int i=0;
+		double soma=0;
+		
+		for (i=0;i<6;i++){
+			System.out.println("Digite o valor:");
+			valor[i]=entrada.nextDouble();
+			System.out.println("Digite o tipo da operação: D- Débito ou C- Crédito: ");
+			tipoOperacao[i]=entrada.next().charAt(0);
+			tipoOperacao[i]=Character.toUpperCase(tipoOperacao[i]);
+			
+			soma=+valor[i];
+		}
+		
+		entrada.close();
+	}
+
+}

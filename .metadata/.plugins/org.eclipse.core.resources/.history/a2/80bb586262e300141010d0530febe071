@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class CorrecaoNAC {
+
+	// Criação da variável para entrada de dados
+
+	public static void main(String[] args) {
+
+		Scanner entrada = new Scanner(System.in);
+		
+		//Declaração das variáveis
+		int idade, contador, qtd1, qtd2;
+		double peso, altura, totPeso, totAltura;
+
+		//Atribuiir valores às variáveis
+		idade=0;
+		contador=0;
+		qtd1=0;
+		qtd2=0;
+		peso=0;
+		altura=0;
+		totPeso=0;
+		totAltura=0;
+	
+		//Estrutura de Repetição
+		while (contador<5){
+			
+			System.out.println("Digite a idade: ");
+			idade=entrada.nextInt();
+			
+			System.out.println("Digite a altura: ");
+			altura=entrada.nextDouble();
+			
+			System.out.println("Digite o peso: ");
+			peso=entrada.nextDouble();
+			
+			contador++;
+			
+			if (idade>50){
+				qtd1++;
+			}else{
+				if (idade>10 && idade<20){
+					qtd2++;
+					totAltura=totAltura + altura;
+				}
+			}
+
+			if(peso<40){
+				totPeso++;
+			}
+		}
+
+		
+	}
+}

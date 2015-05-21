@@ -1,0 +1,80 @@
+package lista2;
+import java.util.Scanner;
+
+public class Ex06 {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		int idade, peso,i,qtd1,somaAz,somaRui,somaId;
+		char cabelo,olhos;
+		double altura,mediaId,pctAz,somaAlt;
+		
+		somaId=0;
+		somaRui=0;
+		somaAz=0;
+		pctAz=0;
+		somaAlt=0;
+		mediaId=0;
+		qtd1=0;
+		i=0;
+		idade=0;
+		peso=0;
+		altura=0;
+		cabelo='\u0000';
+		olhos='\u0000';
+		
+		
+		for(i=0; i<3; i++){
+			System.out.println("Insira a idade: ");
+			idade = entrada.nextInt();
+			System.out.println("Insira o peso: ");
+			peso = entrada.nextInt();
+			System.out.println("Insira a altura: ");
+			altura = entrada.nextDouble();
+			System.out.println("Insira a cor dos cabelos: ");
+			cabelo = entrada.next().charAt(0);
+			cabelo = Character.toUpperCase(cabelo);
+			System.out.println("Insira a cor dos olhos: ");
+			olhos = entrada.next().charAt(0);
+			olhos = Character.toUpperCase(olhos);
+			
+			if((idade>50) && (peso<60)){
+				qtd1++;
+			}
+			
+			if(altura<1.50){
+				somaId=somaId+idade;
+				somaAlt=somaAlt+altura;
+			}
+			
+			if (olhos=='A'){
+				somaAz++;
+			}
+			if ((cabelo=='R') && (olhos!='A')){
+				somaRui++;
+			}
+		}
+		
+		if (somaAlt!=0){
+		mediaId=(double)somaId/somaAlt;
+		}
+		if (i!=0){
+		pctAz=(double)somaAz/i;	
+		}
+		
+		System.out.println(olhos);
+		System.out.println(cabelo);
+		System.out.println("A quantidade de pessoas com idade superior a 50 anos e peso inferior a 60 quilos: "+ qtd1);
+		System.out.println("A média das idades das pessoas com altura inferior a 1,50: "+ mediaId);
+		System.out.println("A porcentagem de pessoas com olhos azuis entre todas as pessoas analisadas: "+pctAz);
+		System.out.println("A quantidade de pessoas ruivas e que não possuem olhos azuis: "+somaRui);
+		
+	
+		
+		entrada.close();
+		
+	}
+
+}

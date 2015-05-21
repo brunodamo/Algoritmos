@@ -1,0 +1,41 @@
+package lista1;
+import java.util.Scanner;
+public class Ex02 {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		
+		Double[] valor = new Double[6];
+		char[] tipoOperacao = new char[6];
+		int i=0;
+		double somaDeb=0,somaCred=0,diferenca=0;
+		
+		for (i=0;i<6;i++){
+			System.out.println("Digite o valor:");
+			valor[i]=entrada.nextDouble();
+			System.out.println("Digite o tipo da operação: D- Débito ou C- Crédito: ");
+			tipoOperacao[i]=entrada.next().charAt(0);
+			while ((tipoOperacao[i]!='C')&&(tipoOperacao[i]!='D')){	
+				System.out.println("Tipo inválido! Insira um tipo correto:");
+				System.out.println("Digite o tipo da operação: D- Débito ou C- Crédito: ");
+				tipoOperacao[i]=entrada.next().charAt(0);
+				tipoOperacao[i]=Character.toUpperCase(tipoOperacao[i]);
+			}
+			if (tipoOperacao[i]=='C'){
+				somaCred+=valor[i];
+			}else{
+				somaDeb+=valor[i];
+			}
+		}
+		
+		diferenca=somaCred-somaDeb;
+		
+		
+		System.out.println("O total de créditos:" +somaCred);
+		System.out.println("O total de débitos:" +somaDeb);
+		System.out.println("A diferença é:" +diferenca);
+		
+		entrada.close();
+	}
+
+}
