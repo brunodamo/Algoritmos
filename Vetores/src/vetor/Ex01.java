@@ -1,4 +1,4 @@
-package br.com.fiap.vetor;
+package vetor;
 
 import java.util.Scanner;
 
@@ -36,6 +36,7 @@ public class Ex01 {
 		System.out.println("O mês com a maior temperatura foi: "+mes[maiorMes]);
 		System.out.println("O mes com a menor temperatura foi: "+mes[menorMes]);
 		
+		entrada.close();
 	}
 
 

@@ -1,4 +1,4 @@
-package br.com.fiap.vetor;
+package vetor;
 
 import java.util.Scanner;
 
