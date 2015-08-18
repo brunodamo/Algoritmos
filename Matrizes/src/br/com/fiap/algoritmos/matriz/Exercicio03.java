@@ -18,7 +18,7 @@ public class Exercicio03 {
 		}
 		
 		for (int i = 0; i<precoProdutoLoja.length;i++){
-			for (int j=0; i<precoProdutoLoja[i].length;j++){
+			for (int j=0; j<precoProdutoLoja[i].length;j++){
 			System.out.println("Insira o valor do produto " + produto[i] + " na "+(j+1)+"ª loja: ");
 			precoProdutoLoja[i][j] = entrada.nextDouble();
 			}
@@ -31,7 +31,7 @@ public class Exercicio03 {
 		}
 		
 		for (int i = 0; i<precoProdutoLoja.length;i++){
-			for (int j=0; i<precoProdutoLoja[i].length;j++){
+			for (int j=0; j<precoProdutoLoja[i].length;j++){
 				if (precoProdutoLoja[i][j] <= 50){
 					imposto[i][j] = 5;
 				}else if (precoProdutoLoja[i][j] <= 100){
@@ -45,11 +45,11 @@ public class Exercicio03 {
 		System.out.println("==== RELATÓRIO FINAL ====");
 		for (int i=0; i<precoProdutoLoja.length;i++){
 			System.out.println("Produto: " + produto[i]);
-			for (int j=0; i<precoProdutoLoja[i].length;j++){
-				System.out.println("\tna Loja ["+(j+1)+"] com imposto de" + imposto[i][j] + "%, "
+			for (int j=0; j<precoProdutoLoja[i].length;j++){
+				System.out.println("\tna Loja ["+(j+1)+"] com imposto de " + imposto[i][j] + "%, "
 						+ "com custo de transporte: R$" + custoTransporte[i] + 
-						" de preço inicial:  R$" + precoProdutoLoja[i][j] +
-						"e preço final: R$" + (precoProdutoLoja[i][j] * (precoProdutoLoja[i][j] + (imposto[i][j])/100)));
+						" de preço inicial: R$" + precoProdutoLoja[i][j] +
+						" e preço final: R$" + (precoProdutoLoja[i][j] * (precoProdutoLoja[i][j] + (imposto[i][j])/100)));
 			}
 		}
 		
